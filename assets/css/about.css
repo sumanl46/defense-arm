@@ -2,7 +2,7 @@
 	position: relative;
 	width: 100%;
 	height: auto;
-	padding: 60px 150px;
+	padding: 20px;
 }
 
 /* #container > :not([hidden]) ~ :not([hidden]) {
@@ -28,14 +28,14 @@
 	display: flex;
 	align-items: flex-end;
 	justify-content: center;
-	padding: 60px 150px;
+	padding: 20px;
 	overflow: hidden;
 }
 
 .content p {
 	text-align: center;
 	text-wrap: pretty;
-	max-width: 60vw;
+	max-width: 100%;
 	font-size: 12px;
 	line-height: 25px;
 	color: #bfbfbf;
@@ -53,6 +53,12 @@ main #featuresSection {
 	height: auto;
 }
 
+#featuresSection .grid {
+	display: grid;
+	justify-items: flex-start;
+	gap: 10px;
+}
+
 #featuresSection h4 {
 	text-transform: uppercase;
 	font-weight: 900;
@@ -67,7 +73,7 @@ main #featuresSection {
 	display: grid;
 	gap: 40px;
 	justify-items: flex-start;
-	grid-template-columns: repeat(2, minmax(0, 1fr));
+	grid-template-columns: repeat(1, minmax(0, 1fr));
 	grid-template-rows: auto;
 }
 
@@ -125,8 +131,8 @@ details:nth-last-child(1) {
 }
 
 summary {
-	padding: 20px 30px;
-	font-size: 12px;
+	padding: 10px;
+	font-size: 10px;
 	font-weight: 600;
 	cursor: pointer;
 }
@@ -137,12 +143,13 @@ summary::before {
 }
 
 details p {
-	padding: 20px 30px;
+	padding: 10px;
 	background-color: #f1f3f4;
 }
 
 #commitmentSection {
-	display: flex;
+	width: 100%;
+	display: grid;
 }
 
 #commitmentSection .flex {
@@ -158,20 +165,29 @@ details p {
 }
 
 #commitmentSection .flex.left {
-	padding: 40px 20px 40px 150px;
-	justify-items: flex-end;
-	border-right: 1px solid #f1f3f4;
+	width: 100%;
+	padding: 20px;
+	justify-items: flex-start;
+	border-bottom: 1px solid #f1f3f4;
+}
+
+#commitmentSection .flex.left p {
+	text-align: left;
 }
 
 #commitmentSection .flex.right {
-	padding: 40px 150px 40px 20px;
+	width: 100%;
+	padding: 20px;
 	justify-items: flex-start;
-	border-right: 1px solid #f1f3f4;
 }
 
 #commitmentSection .flex.right a {
+	min-width: max-content;
+	height: 40px;
+	display: flex;
+	align-items: center;
 	border-radius: 2px;
-	padding: 10px 20px;
+	padding: 0px 20px;
 	background: rgb(12, 132, 229);
 	color: #ffffff;
 	font-weight: 500;
@@ -180,4 +196,66 @@ details p {
 
 #commitmentSection .flex.right a:hover {
 	background: rgb(8, 111, 196);
+}
+
+@media (min-width: 500px) {
+	#featuresSection .features-grid {
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+	}
+
+	summary {
+		padding: 20px 30px;
+		font-size: 12px;
+	}
+
+	details p {
+		padding: 20px 30px;
+	}
+
+	p {
+		font-size: 12px;
+	}
+
+	@media (min-width: 700px) {
+		.container {
+			padding: 60px;
+		}
+
+		#featuresSection .grid {
+			gap: 60px;
+		}
+
+		#bannerSection .content {
+			padding: 60px 150px;
+		}
+
+		.content p {
+			max-width: 60vw;
+		}
+
+		#commitmentSection {
+			display: flex;
+		}
+
+		#commitmentSection .flex.left {
+			padding: 40px 20px 40px 150px;
+			justify-items: flex-end;
+			border-right: 1px solid #f1f3f4;
+		}
+
+		#commitmentSection .flex.left p {
+			text-align: right;
+		}
+
+		#commitmentSection .flex.right {
+			padding: 40px 150px 40px 20px;
+			justify-items: flex-start;
+		}
+
+		@media (min-width: 900px) {
+			.container {
+				padding: 60px 150px;
+			}
+		}
+	}
 }

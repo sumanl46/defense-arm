@@ -22,10 +22,11 @@ main #bannerSection {
 .container {
 	position: relative;
 	height: auto;
-	padding: 80px 150px;
+	padding: 20px;
 }
 
-#featuresSection h4 {
+#featuresSection h4,
+#innovationSection h4 {
 	text-transform: uppercase;
 	font-weight: 900;
 	letter-spacing: 1px;
@@ -39,7 +40,7 @@ main #bannerSection {
 	display: grid;
 	gap: 40px;
 	justify-items: flex-start;
-	grid-template-columns: repeat(2, minmax(0, 1fr));
+	grid-template-columns: repeat(1, minmax(0, 1fr));
 	grid-template-rows: auto;
 }
 
@@ -71,4 +72,119 @@ p {
 	text-align: left;
 	text-wrap: pretty;
 	color: #474747;
+}
+
+#overviewSection {
+	position: relative;
+	width: 100%;
+	height: auto;
+	display: flex;
+	background: #474747;
+	color: #f1f3f4;
+}
+
+#overviewSection .flex {
+	position: relative;
+	width: 50%;
+	height: 100%;
+	display: flex;
+	align-items: flex-start;
+	cursor: default;
+}
+
+#overviewSection .flex:hover {
+	background: #353535;
+}
+
+#overviewSection .flex p {
+	color: #bbbbbb;
+}
+
+#overviewSection .flex.left {
+	padding: 40px 20px 40px 150px;
+	justify-items: flex-end;
+	border-right: 1px solid #757575;
+}
+
+#overviewSection .flex.right {
+	padding: 40px 150px 40px 20px;
+	justify-items: flex-start;
+}
+
+#innovationSection .grids {
+	position: relative;
+	width: 100%;
+	display: grid;
+	gap: 40px;
+	grid-template-columns: repeat(1, 1fr);
+	grid-template-rows: auto;
+}
+
+.grids .grid-box {
+	width: 100%;
+	background: #fbfbfb;
+	border: 1px solid #f1f3f4;
+	cursor: pointer;
+}
+
+.grids .grid-box img {
+	width: 100%;
+	aspect-ratio: auto;
+	object-fit: contain;
+}
+
+.grids .grid-box:hover {
+	border: 1px solid #c5c5c5;
+	box-shadow: 8px 20px 20px 0px #ececec;
+}
+
+.grid-box .content {
+	background: #f1f3f4;
+	padding: 10px;
+	display: grid;
+	gap: 10px;
+	justify-items: flex-start;
+	overflow: hidden;
+}
+
+.grid-box .content p {
+	line-height: 15px;
+	line-clamp: 6;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 6;
+}
+@media (min-width: 700px) {
+	.container {
+		padding: 60px;
+	}
+
+	@media (min-width: 800px) {
+		.grids .grid-box img {
+			aspect-ratio: 1 / 1;
+			object-fit: contain;
+		}
+
+		#innovationSection .grids {
+			grid-template-columns: repeat(2, 1fr);
+		}
+
+		#featuresSection .features-grid {
+			grid-template-columns: repeat(2, minmax(0, 1fr));
+		}
+
+		@media (min-width: 1100px) {
+			#innovationSection .grids {
+				grid-template-columns: repeat(3, 1fr);
+			}
+		}
+
+		@media (min-width: 900px) {
+			.container {
+				padding: 60px 150px;
+			}
+		}
+	}
 }

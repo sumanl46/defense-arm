@@ -2,7 +2,7 @@
 	position: relative;
 	width: 100%;
 	height: auto;
-	padding: 60px 150px;
+	padding: 20px;
 }
 
 /* #container > :not([hidden]) ~ :not([hidden]) {
@@ -152,4 +152,22 @@ textarea {
 .contact-form .submit-btn:hover {
 	background: #e7e7e7;
 	border: 1px solid #bebebe;
+}
+
+@media (min-width: 500px) {
+	p {
+		font-size: 12px;
+	}
+
+	@media (min-width: 700px) {
+		#container {
+			padding: 60px;
+		}
+
+		@media (min-width: 900px) {
+			#container {
+				padding: 60px 150px;
+			}
+		}
+	}
 }
