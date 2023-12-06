@@ -10,7 +10,7 @@
 		<link rel="stylesheet" href="./assets/css/main.css" />
 	</head>
 	<body>
-		<div class="wrapper">
+		<div class="wrapper" id="wrapper">
 			<header>
 				<a href="index.html">
 					<div
@@ -33,15 +33,9 @@
 						</a>
 					</li>
 
-					<li>
-						<a href="#">
+					<li class="hidden">
+						<a href="javascript:scrollIntoInnovations()">
 							<span>Products</span>
-						</a>
-					</li>
-
-					<li>
-						<a href="#">
-							<span>What We Do</span>
 						</a>
 					</li>
 
@@ -63,37 +57,32 @@
 
 			<main>
 				<section id="bannerSection">
+					<img src="./assets/images/tank.png" alt="banner image" style="position: absolute; z-index: 1" />
+
 					<div class="content">
-						<img src="./assets/images/tank.png" alt="banner image" />
+						<div class="grid">
+							<h1
+								style="
+									font-weight: bolder;
+									color: #dcdbdb;
+									text-transform: uppercase;
+									font-size: 35px;
+									letter-spacing: 2px;
+								"
+							>
+								Defense &nbsp; Arm
+							</h1>
 
-						<h1
-							style="
-								font-weight: bolder;
-								color: #dcdbdb;
-								text-transform: uppercase;
-								font-size: 35px;
-								letter-spacing: 2px;
-							"
-						>
-							Defense &nbsp; Arm
-						</h1>
-
-						<p
-							style="
-								text-align: center;
-								line-height: 25px;
-								font-size: 12px;
-								color: #949393;
-								max-width: 600px;
-							"
-						>
-							<span style="color: #e4e4e4; font-weight: 500; text-decoration: underline">
-								Welcome to Defense Arm </span
-							>, Defense Arm (DA) is a preeminent force in the global weapons industry, established in
-							2008 with a singular vision: improving accuracy and reliability in current generation rifles
-							and other weapon systems. SMW strives for excellence every day while constantly innovating
-							and raising the bar higher every other company on this field should try to reach such level.
-						</p>
+							<p>
+								<span style="color: #e4e4e4; font-weight: 500; text-decoration: underline">
+									Welcome to Defense Arm </span
+								>, Defense Arm (DA) is a preeminent force in the global weapons industry, established in
+								2008 with a singular vision: improving accuracy and reliability in current generation
+								rifles and other weapon systems. SMW strives for excellence every day while constantly
+								innovating and raising the bar higher every other company on this field should try to
+								reach such level.
+							</p>
+						</div>
 					</div>
 				</section>
 
@@ -146,9 +135,9 @@
 
 				<section id="overviewSection">
 					<div class="flex left">
-						<div style="display: grid; gap: 20px; justify-items: flex-end">
-							<h4>Our Misson</h4>
-							<p style="text-align: right">
+						<div class="grid one">
+							<h4 style="min-width: max-content">Our Misson</h4>
+							<p>
 								We are driven by a singular mission: to empower defense agencies and organizations
 								worldwide with unparalleled defense technology and consultancy services. Our goal is to
 								enhance security, provide strategic advantage, and ensure readiness in an ever-evolving
@@ -158,8 +147,8 @@
 					</div>
 
 					<div class="flex right">
-						<div style="display: grid; gap: 20px; justify-items: flex-start">
-							<h4>What Sets Us Apart</h4>
+						<div class="grid two">
+							<h4 style="min-width: max-content">What Sets Us Apart</h4>
 							<p>
 								At Defense Arm, innovation is ingrained in our DNA. We combine technological prowess
 								with a deep understanding of defense dynamics, delivering adaptable, reliable, and
@@ -171,7 +160,7 @@
 				</section>
 
 				<section id="innovationSection" class="container">
-					<div style="display: grid; justify-items: flex-start; gap: 60px">
+					<div class="grid">
 						<h4>
 							Latest Innovations
 							<div
